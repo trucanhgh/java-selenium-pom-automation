@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Source: https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation 'org.seleniumhq.selenium:selenium-java:4.40.0'
+    // Source: https://mvnrepository.com/artifact/org.testng/testng
+    implementation 'org.testng:testng:7.11.0'
+}
+
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile){
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useTestNG(){
+        useDefaultListeners = true //khai báo sd testNG
+        outputDirectory = file("$projectDir/test-output") //đường dẫn lưu kết quả test
+    }
+}
