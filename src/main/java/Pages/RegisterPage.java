@@ -1,11 +1,12 @@
 package Pages;
 
+import Constants.TimeOutConstant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class RegisterPage {
+public class RegisterPage extends CommonPage {
     //các locator của page: thuộc tính của lớp đối tượng
     private By byInputTaiKhoan = By.id("taiKhoan");
     private By byInputMatKhau = By.id("matKhau");
@@ -16,50 +17,56 @@ public class RegisterPage {
 
     private WebDriver driver;
     public RegisterPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     //các method của page: hành động của người dùng trên page
+    public void inputTaiKhoan(String username, long timeoutInSeconds) {
+        inputText(byInputTaiKhoan, username, timeoutInSeconds);
+    }
+
     public void inputTaiKhoan(String username) {
-        WebDriverWait wait = new WebDriverWait(driver, java.time.Duration.ofSeconds(10));
-        wait.until(org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated(byInputTaiKhoan));
-        WebElement txtTaiKhoan = wait.until(org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated(byInputTaiKhoan));
-        txtTaiKhoan.sendKeys(username);
+        inputTaiKhoan(username, TimeOutConstant.TIME_OUT_DEFAULT);
     }
 
     public void inputMatKhau(String password) {
-        WebDriverWait wait = new WebDriverWait(driver, java.time.Duration.ofSeconds(10));
-        wait.until(org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated(byInputMatKhau));
-        WebElement txtMatKhau = wait.until(org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated(byInputMatKhau));
-        txtMatKhau.sendKeys(password);
+        inputText(byInputMatKhau, password);
+    }
+
+    public void inputMatKhau(String password, long timeoutInSeconds) {
+        inputText(byInputMatKhau, password, timeoutInSeconds);
     }
 
     public void inputXacNhanMatKhau(String confirmPassword) {
-        WebDriverWait wait = new WebDriverWait(driver, java.time.Duration.ofSeconds(10));
-        wait.until(org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated(byInputXacNhanMatKhau));
-        WebElement txtXacNhanMatKhau = wait.until(org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated(byInputXacNhanMatKhau));
-        txtXacNhanMatKhau.sendKeys(confirmPassword);
+        inputText(byInputXacNhanMatKhau, confirmPassword);
+    }
+
+    public void inputXacNhanMatKhau(String confirmPassword, long timeoutInSeconds) {
+        inputText(byInputXacNhanMatKhau, confirmPassword, timeoutInSeconds);
     }
 
     public void inputHoTen(String fullName) {
-        WebDriverWait wait = new WebDriverWait(driver, java.time.Duration.ofSeconds(10));
-        wait.until(org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated(byInputHoTen));
-        WebElement txtHoTen = wait.until(org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated(byInputHoTen));
-        txtHoTen.sendKeys(fullName);
+        inputText(byInputHoTen, fullName);
+    }
+
+    public void inputHoTen(String fullName, long timeoutInSeconds) {
+        inputText(byInputHoTen, fullName, timeoutInSeconds);
     }
 
     public void inputEmail(String email) {
-        WebDriverWait wait = new WebDriverWait(driver, java.time.Duration.ofSeconds(10));
-        wait.until(org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated(byInputEmail));
-        WebElement txtEmail = wait.until(org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated(byInputEmail));
-        txtEmail.sendKeys(email);
+        inputText(byInputEmail, email);
+    }
+
+    public void inputEmail(String email, long timeoutInSeconds) {
+        inputText(byInputEmail, email, timeoutInSeconds);
     }
 
     public void clickSubmitBtn() {
-        WebDriverWait wait = new WebDriverWait(driver, java.time.Duration.ofSeconds(10));
-        wait.until(org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated(bySubmitBtn));
-        WebElement submitBtn = wait.until(org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated(bySubmitBtn));
-        submitBtn.click();
+        clickBtn(bySubmitBtn);
+    }
+
+    public void clickSubmitBtn(long timeoutInSeconds) {
+        clickBtn(bySubmitBtn, timeoutInSeconds);
     }
 
 

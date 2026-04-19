@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="testcase.register.Register_01_Verify_Successful" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-04-18T02:19:39.938Z" hostname="TRUCANH" time="3.768">
+  <properties/>
+  <testcase name="verifySuccessfulRegister" classname="testcase.register.Register_01_Verify_Successful" time="3.768"/>
+  <system-out><![CDATA[[09:19:37] [INFO ] Register_01_Verify_Successful - Starting before class setup...
+[09:19:39] [INFO ] Register_01_Verify_Successful - Starting test method: verifySuccessfulRegister
+[09:19:41] [INFO ] NavbarComponent - Click button with locator: By.xpath: //h3[text()="Đăng Ký"]
+[09:19:41] [INFO ] RegisterPage - Click button with locator: By.xpath: //button[@type="submit"]
+[09:19:42] [INFO ] CommonDialog - Click button with locator: By.xpath: //button[text()="Đóng"]
+[09:19:42] [INFO ] NavbarComponent - Click button with locator: By.xpath: //h3[text()="Đăng Nhập"]
+[09:19:43] [INFO ] LoginPage - Click button with locator: By.xpath: //span[text()="Đăng nhập"]
+]]></system-out>
+  <system-err><![CDATA[Apr 18, 2026 9:19:39 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 147, returning the closest version; found: 144; Please update to a Selenium version that supports CDP version 147
+]]></system-err>
+</testsuite>
